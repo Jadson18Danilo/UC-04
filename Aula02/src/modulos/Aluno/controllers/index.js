@@ -1,6 +1,7 @@
-import { alunos } from "../../../config/database.js";
-import { AlunoModel } from "../models/index.js";
-import bcrypt from "bcrypt";
+
+import {aluno} from "../../../config/database.js"
+import {AlunoModel} from "../models/index.js"
+import bcrypt from "bcrypt"
 
 export class AlunoController {
   // Create - criando o aluno no array alunos

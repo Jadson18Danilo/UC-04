@@ -1,4 +1,5 @@
-import { AlunoController } from './modulos/Aluno/controllers/index.js';
+
+
 import promptSync from 'prompt-sync';
 
 const prompt = promptSync(); 
