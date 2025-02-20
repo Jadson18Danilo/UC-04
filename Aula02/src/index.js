@@ -8,6 +8,21 @@ const aluno1 = new AlunoController();
 
 function exibirMenu() {
     console.log("\n===== MENU =====");
+    console.log("1 - Modulo turma");
+    console.log("2 - Modulo aluno");
+    console.log("3 - Modulo professor");
+}
+/*switch (key) {
+    case value:
+        
+        break;
+
+    default:
+        break;
+}*/
+
+function exibirMenu() {
+    console.log("\n===== MENU =====");
     console.log("1 - Criar novo aluno");
     console.log("2 - Listar todos alunos");
     console.log("3 - Editar aluno por matrícula");

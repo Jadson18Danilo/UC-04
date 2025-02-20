@@ -1,14 +1,11 @@
 
-import {aluno} from "../../../config/database.js"
-import {AlunoModel} from "../models/index.js"
-import bcrypt from "bcrypt"
+import { alunos } from "../../../config/database.js"
+import { AlunoModel } from "../models/index.js"
 
 export class AlunoController {
-  // Create - criando o aluno no array alunos
   criar(matricula, nome, email, senha) {
     try {
-      const senhaHash = bcrypt.hashSync(senha, 10);
-      const novoAluno = new AlunoModel(matricula, nome, email, senha = senhaHash );
+      const novoAluno = new AlunoModel(matricula, nome, email, senha);
       alunos.push(novoAluno);
       console.table(novoAluno);
     } catch (error) {
@@ -24,10 +21,7 @@ export class AlunoController {
       }
       aluno.nome = novoNome || aluno.nome;
       aluno.email = novoEmail || aluno.email;
-      // Se nova senha for informada, criptografa-a
-      aluno.senha = novaSenha ? bcrypt.hashSync(novaSenha, 10) : aluno.senha;
-      
-      return console.table(aluno);
+      aluno.senha = novaSenha || aluno.senha;
     } catch (error) {
       console.error("Erro ao tentar atualizar o aluno", error.message);
     }
@@ -45,8 +39,7 @@ export class AlunoController {
       console.error("Erro ao tentar excluir o aluno", error.message);
     }
   }
-
-  deletarTodos() {
+    deletarTodos() {
     try {
       alunos.length = 0;
       console.log("Todos os alunos excluidos!");
@@ -66,7 +59,7 @@ export class AlunoController {
       console.error("Erro ao tentar exibir o aluno", error.message);
     }
   }
-
+  
   listarTodos() {
     try {
       if (alunos.length === 0) {
