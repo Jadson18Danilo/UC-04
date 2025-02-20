@@ -11,12 +11,12 @@ const prompt = promptSync();
 const aluno1 = new AlunoController();
 
 function exibirOp() {
-    console.log("\n===== Op =====");
+    console.log("\n===== Opções =====");
     console.log("1 - Modulo turma");
     console.log("2 - Modulo aluno");
     console.log("3 - Modulo professor");
     console.log("0 - Modulo professor");
-    console.log("\n================");
+    console.log("\n==================");
 }
 
 let controleOp;
@@ -51,13 +51,14 @@ do {
 
 
 function exibirMenu() {
-    console.log("\n===== MENU =====");
+    console.log("\n============ MENU ============");
     console.log("1 - Criar novo aluno");
     console.log("2 - Listar todos alunos");
     console.log("3 - Editar aluno por matrícula");
     console.log("4 - Excluir todos alunos");
     console.log("5 - Excluir aluno por matrícula");
     console.log("0 - Sair");
+    console.log("\n==============================");
 }
 
 let controle;
