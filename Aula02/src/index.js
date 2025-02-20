@@ -1,25 +1,54 @@
+import { AlunoView } from './modulos/Aluno/views/index'; 
+import { TurmaView } from './modulos/Turma/views';
 
+const aluno = new AlunoView()
+const turma = new TurmaView()
 
 import promptSync from 'prompt-sync';
-
 const prompt = promptSync(); 
+
 
 const aluno1 = new AlunoController();
 
-function exibirMenu() {
-    console.log("\n===== MENU =====");
+function exibirOp() {
+    console.log("\n===== Op =====");
     console.log("1 - Modulo turma");
     console.log("2 - Modulo aluno");
     console.log("3 - Modulo professor");
+    console.log("0 - Modulo professor");
+    console.log("\n================");
 }
-/*switch (key) {
-    case value:
-        
-        break;
 
-    default:
-        break;
-}*/
+let controleOp;
+
+do {
+    exibirOp();
+    controleOp = parseInt(prompt("Digite uma numeração de 0 a 5: "), 10);
+
+    switch (controleOp) {
+        case 1:
+            
+            break;
+
+        case 2:
+            
+            break;
+
+        case 3:
+            
+            break;
+
+        case 0:
+            
+            break;
+
+        default:
+            console.log("Opção inválida! Digite um número de 0 a 3.");
+            break;
+    }
+
+} while (controleOp !== 0);
+
 
 function exibirMenu() {
     console.log("\n===== MENU =====");
