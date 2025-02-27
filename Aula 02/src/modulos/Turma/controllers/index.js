@@ -4,9 +4,9 @@ import { alunos, turmas } from '../../../config/database.js';
 import { TurmaModel } from '../models/index.js';
 
 export class TurmaController {
-    criar(cod, nome, sala, capacidade) {
+    criar(cod, nome, sala, capacidade, matriculaAluno = [], matriculaProfessor = []) {
         try {
-            const novaTurma = new TurmaModel(cod, nome, sala, capacidade);
+            const novaTurma = new TurmaModel(cod, nome, sala, capacidade, aluno);
             turmas.push(novaTurma);
             console.table(novaTurma);
         } catch (error) {
@@ -14,7 +14,7 @@ export class TurmaController {
         }
     }
 
-    editar(cod, novoNome, novaSala, novaCapacidade) {
+    editar(cod, novoNome, novaSala, novaCapacidade){
         try {
             const turma = turmas.find(turma => turma.getCod === cod);
             if(!turma) {
@@ -72,5 +72,6 @@ export class TurmaController {
         } catch (error) {
             console.error("Erro ao tentar exibir as turmas", error.message);
         }
+    
     }
 }
